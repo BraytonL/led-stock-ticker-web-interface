@@ -8,7 +8,7 @@ from remi import start, App
 class MyApp(App):
     
     regExPattern = '^(?:[a-zA-Z]+,)*[a-zA-Z]+$'
-    pathToStockTicker = os.path.abspath("led-stock-ticker/main.py")
+    pathToStockTicker = os.path.abspath("led-stock-ticker")
     stockTickerStartCmd = 'sudo python3 ' + pathToStockTicker + '/main.py ' + '--led-rows 16 --led-cols 16 --led-gpio-mapping adafruit-hat'
     stockTickerStartCmd = stockTickerStartCmd.split(' ')
     pid = 0
