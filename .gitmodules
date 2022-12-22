@@ -1,6 +1,6 @@
 [submodule "led-stock-ticker"]
 	path = led-stock-ticker
-	url = https://github.com/feram18/led-stock-ticker.git
+	url = https://github.com/BraytonL/led-stock-ticker.git
 	branch = dev
 [submodule "remi"]
 	path = remi
