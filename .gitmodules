@@ -1,0 +1,7 @@
+[submodule "led-stock-ticker"]
+	path = led-stock-ticker
+	url = https://github.com/feram18/led-stock-ticker.git
+	branch = dev
+[submodule "remi"]
+	path = remi
+	url = https://github.com/rawpython/remi
