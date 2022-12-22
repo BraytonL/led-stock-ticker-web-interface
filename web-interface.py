@@ -27,7 +27,7 @@ class MyApp(App):
         self.bt_StopDisplay.set_enabled(False)
 
     def update_display(self, tickerSymbols):
-        with open(self.pathToStockTicker + '/config/default_config.json', 'r') as file:
+        with open(self.pathToStockTicker + '/config/config.json.example', 'r') as file:
             data = json.load(file)
             data['tickers']['stocks'] = tickerSymbols.split(',')
         
