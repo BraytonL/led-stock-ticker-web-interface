@@ -9,7 +9,7 @@ class MyApp(App):
     
     regExPattern = '^(?:[a-zA-Z]+,)*[a-zA-Z]+$'
     pathToStockTicker = os.path.abspath("led-stock-ticker/main.py")
-    stockTickerStartCmd = 'sudo python3 ' + pathToStockTicker + '--led-rows 16 --led-cols 16 --led-gpio-mapping adafruit-hat'
+    stockTickerStartCmd = 'sudo python3 ' + pathToStockTicker + '/main.py ' + '--led-rows 16 --led-cols 16 --led-gpio-mapping adafruit-hat'
     stockTickerStartCmd = stockTickerStartCmd.split(' ')
     pid = 0
     ledBrightness = 75
@@ -27,11 +27,11 @@ class MyApp(App):
         self.bt_StopDisplay.set_enabled(False)
 
     def update_display(self, tickerSymbols):
-        with open('/home/pi/my-led-stock-ticker/led-stock-ticker/config/default_config.json', 'r') as file:
+        with open(self.pathToStockTicker + '/config/default_config.json', 'r') as file:
             data = json.load(file)
             data['tickers']['stocks'] = tickerSymbols.split(',')
         
-        with open('/home/pi/my-led-stock-ticker/led-stock-ticker/config/config.json', 'w') as file:
+        with open(self.pathToStockTicker + '/config/config.json', 'w') as file:
             json.dump(data, file)
 
     def __init__(self, *args):
